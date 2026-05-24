@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                echo 'DEPLOY STARTED'
+                echo 'Deploying application to server...'
+                sleep 25
+                echo 'DEPLOY SUCCESSFUL'
+            }
+        }
+    }
+}
