@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building Application'
+                sleep 10
+            }
+        }
+
+        stage('Trigger Test') {
+            steps {
+                build job: 'Unit-Test-1'
+            }
+        }
+    }
+}
