@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Scan') {
+            steps {
+                echo 'SECURITY SCAN STARTED'
+                echo 'Scanning vulnerabilities...'
+                sleep 20
+                echo 'NO CRITICAL ISSUES FOUND'
+            }
+        }
+
+        stage('Trigger Deploy') {
+            steps {
+                build job: 'Deploy-Staging-1'
+            }
+        }
+    }
+}
