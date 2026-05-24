@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Running Tests'
+                sleep 15
+            }
+        }
+
+        stage('Trigger Scan') {
+            steps {
+                build job: 'Security-Scan-1'
+            }
+        }
+    }
+}
